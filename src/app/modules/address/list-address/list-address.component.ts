@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { addressMock } from '../../../shared/mocks/address/address-mock';
 
 @Component({
   selector: 'app-list-address',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListAddressComponent implements OnInit {
 
+  addresses = addressMock;
   constructor() { }
 
   ngOnInit(): void {
+    console.log('addresses :', this.addresses);
   }
 
 }
