@@ -12,6 +12,8 @@ import { DisplayEditUserComponent } from './modules/user/display-edit-user/displ
 import { ListUserComponent } from './modules/user/list-user/list-user.component';
 import { ListMovieComponent } from './modules/movie/list-movie/list-movie.component';
 import { ListAddressComponent } from './modules/address/list-address/list-address.component';
+import { ListInvoiceComponent } from './modules/invoice/list-invoice/list-invoice.component';
+import { DisplayEditInvoiceComponent } from './modules/invoice/display-edit-invoice/display-edit-invoice.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ListAddressComponent } from './modules/address/list-address/list-addres
     DisplayEditUserComponent,
     ListUserComponent,
     ListMovieComponent,
-    ListAddressComponent
+    ListAddressComponent,
+    ListInvoiceComponent,
+    DisplayEditInvoiceComponent
   ],
   imports: [
     BrowserModule,
