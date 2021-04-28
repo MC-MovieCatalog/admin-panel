@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { movieMock } from '../../../shared/mocks/movie/movie-mock';
 @Component({
   selector: 'app-list-movie',
   templateUrl: './list-movie.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListMovieComponent implements OnInit {
 
+  movies = movieMock;
   constructor() { }
 
   ngOnInit(): void {
+    console.log('movies :', this.movies);
   }
 
 }
