@@ -2,7 +2,9 @@
 
 ## Prérequis
 
+- node js
 - npm
+- typescript
 - @angular/cli
 
 ## Installation du projet
@@ -22,7 +24,14 @@ Ou
 ````bash
  `npm install`
 ````
-
+En cas de conflits, vous pouvez les fixer en installant le projet avec la commande suivante :
+````bash
+ `npm install --legacy-peer-deps`
+````
+Ou
+````bash
+ `npm install --force`
+````
 
 ## Default instructions
 
