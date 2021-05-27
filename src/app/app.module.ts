@@ -15,6 +15,7 @@ import { ListAddressComponent } from './modules/address/list-address/list-addres
 import { ListInvoiceComponent } from './modules/invoice/list-invoice/list-invoice.component';
 import { DisplayEditInvoiceComponent } from './modules/invoice/display-edit-invoice/display-edit-invoice.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
