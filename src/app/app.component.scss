@@ -1,0 +1,257 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+// START SIDE - NAV BAR
+
+.data {
+  // background: url(https://pixabay.com/get/g05bd83350cd2114e0eb48254c2060bd6ad5cca83f06a1a721cef6aa0761fcf91512acb3c4f2edc9de462c2f33e00ab34.jpg);
+  // height: 100vh;
+  margin-left: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// nav
+.header-nav {
+  background: #5A3531;
+  // background: #1d2951;
+  line-height: 80px;
+  position: fixed;
+  width: 100%;
+}
+
+label {
+  line-height: 80px;
+  font-size: 30px;
+  color: white;
+  font-weight: 200;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.custom-label > a > i, .custom-label > a > span, .custom-label > a > fa-icon {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+.custom-label > a > span {
+  padding-left: 10px !important;
+}
+
+// nav ul
+.header-nav > ul {
+  float: right;
+  margin-right: 20px;
+}
+
+// nav ul li 
+
+.header-nav > ul > li{
+  line-height: 80px;
+  margin: 0 10px;
+}
+
+// nav ul li a
+.header-nav > nav > ul > li > a {
+  color: white;
+  font-size: 20px;
+  padding: 6px 15px;
+  font-weight: 600;
+  background-color: rgb(55, 34, 246);
+  border-radius: 3px;
+}
+
+// nav ul li a:hover 
+.header-nav > nav > ul > li > a:hover{
+  background-color: rgb(49, 27, 214);
+  color: white;
+  transition: 0.5s;
+}
+
+// nav > ul > h2 
+.header-nav > ul > h2 {
+  font-size: 20px !important;
+  color: white;
+  margin-left: 20px !important;
+}
+
+.side-menu {
+  position: fixed;
+  background: #5A3531; // rgb(90, 53, 49)
+  // width: 250px;
+  width: 14%;
+  height: 100%;
+  margin-top: 80px;
+  padding-top: 6px !important;
+}
+
+.side-menu > div > h2 {
+  font-size: 20px !important;
+  color: white;
+  margin-left: 20px !important;
+}
+
+.side-menu > a {
+  display: block;
+  line-height: 60px;
+
+  transition: 0.5s;
+}
+
+.side-menu > a:hover {
+  background: rgb(219, 219, 219, 0.4); // #DBDBDB
+  padding-left: 20px;
+}
+
+.side-menu span {
+  font-size: 20px;
+  margin-left: 10px;
+  color: white;
+}
+
+.side-menu i, .side-menu fa-icon {
+  font-size: 20px;
+  margin-left: 20px;
+  color: white;
+}
+
+// nav .menu-bar 
+.header-nav .menu-bar{
+  float: right;
+  margin-top: 20px;
+  display: none;
+  margin-right: 20px;
+}
+
+#menu {
+  display: none;
+}
+
+.side-menu .Logout {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .side-menu a span {
+    display: none;
+  }
+
+  .side-menu center {
+    display: none;
+  }
+
+  .side-menu {
+    width: 100px;
+  }
+
+  // .side-menu a i 
+  .side-menu > a > i {
+    display: block;
+    line-height: 80px;
+    text-align: center;
+    margin-left: 0;
+    font-size: 35px;
+  }
+
+  .data {
+    margin-left: 68px !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .data {
+    // display: none;
+    margin-left: 0px !important;
+    margin-left: 0px !important;
+    text-align: left !important;
+  }
+
+  // nav ul 
+  .header-nav > ul {
+    display: none;
+  }
+
+  .side-menu {
+    width: 100%;
+    text-align: center;
+    left: 100%;
+    background-color: rgb(90, 53, 49, 0.9); // #DBDBDB
+    transition: all 0.5s;
+  }
+
+  // .side-menu a i 
+  .side-menu > a > i {
+    display: none;
+  }
+
+  // .side-menu a span 
+  .side-menu > a > span {
+    display: block;
+  }
+
+  .side-menu .Logout {
+    display: block;
+  }
+
+  // nav .menu-bar 
+  .header-nav .menu-bar{
+    display: block;
+  }
+}
+
+#menu:checked ~ .side-menu {
+  left: 0;
+}
+
+.avatar {
+  width: 63px;
+  height: 63px;
+}
+
+hr {
+  width: 100% !important;
+  border: 2px solid white !important;
+}
+
+#sidebar-index {
+  clear: both; 
+  z-index: 11;
+}
+
+#navbar-index {
+  z-index: 12;
+}
+// END SIDE NAV BAR 
+
+#header-ariane-nav {
+  width: 100% !important; 
+  padding: 20px !important; 
+  top: 90px !important; 
+  position: fixed; 
+  z-index: 10; 
+  background-color: #E9ECEF !important; 
+  height: 50px !important; 
+  float: left !important;
+}
+
+#header-ariane-nav > nav > ol > li > a {
+  color: #000 !important; // rgb(0, 0, 0)
+}
+
+#header-ariane-nav > nav > ol > li > a:hover {
+  background: rgb(219, 219, 219, 0.4); // #DBDBDB
+  font-size: 20px;
+  font-weight: 400;
+  color: #5A3531;
+}
+
+#router-outlet-style {
+  width: 86% !important; 
+  margin-left: 20px !important; 
+  position: absolute;
+}

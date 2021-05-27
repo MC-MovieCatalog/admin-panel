@@ -1,37 +1,70 @@
-<!-- <h1>App Component</h1>
-<app-list-movie></app-list-movie>
-<app-list-user></app-list-user>
-<app-list-address></app-list-address>
-<app-list-invoice></app-list-invoice> -->
 <div class="app">
-    <header>
-      <section>
-        <!-- <h1>{{ title }}</h1> -->
-        <!-- <h2> {{ version }}</h2> -->
-      </section>
-    </header>
-  
-    <main>
-        <div class="row">
-            <div class="col-sm-2" style="background-color: gray; border: 1px solid grey;">
-                <nav>
-                    <ul>
-                      <li><a routerLink="/">Dashboard</a></li>
-                      <li><a routerLink="/films">Films</a></li>
-                      <li><a routerLink="/utilisateurs">Utilisateurs</a></li>
-                      <li><a routerLink="/factures">Factures</a></li>
-                      <li><a routerLink="/adresses">Adresses</a></li>
-                    </ul>
-                  </nav>
-            </div>
-            <div class="col-sm-10" style="background-color: gray; border: 1px solid ghostwhite;">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-    </main>
-  
-    <!-- <footer>
-      <a href="https://www.movie-catalog.com/">&copy; 2021 - www.movie-catalog.com</a>
-    </footer> -->
-  
+  <header>
+    <section></section>
+  </header>
+
+  <input type="checkbox" id="menu" />
+
+  <!--START NAV BAR-->
+  <nav class="header-nav" id="navbar-index">
+    <label class="custom-label">
+      <a  routerLink="/"><fa-icon [icon]="dashboardIcon"></fa-icon><span class="custom-span">Tableau de bord</span></a>
+    </label>
+
+    <ul>
+      <!-- <li style="display: inline-block !important"><a href="#">Logout</a></li> -->
+      <!-- <a href="#"><i class="fa fa-user"></i><span>Customers</span></a> -->
+      <h2 class="element-inline-block">
+        <img
+          class="avatar rounded-circle"
+          src="https://pixabay.com/get/g74802b500e1cefcd2605f25f38a22d94122463b25f235606522abe9ec7c3aa6459cbf994361c74b83286317bc85caac5_640.jpg"
+        />
+        Nesly PETIT BERT
+      </h2>
+    </ul>
+
+    <label for="menu" class="menu-bar">
+      <i class="fa fa-bars"></i>
+    </label>
+    <hr/>
+  </nav>
+  <!--END NAV BAR-->
+  <hr/>
+
+  <!--START SIDE BAR-->
+  <div class="side-menu" id="sidebar-index">
+    <!-- <hr /> -->
+    <a routerLink="/films"><fa-icon [icon]="filmIcon"></fa-icon><span>Films</span></a>
+    <a routerLink="/utilisateurs"><fa-icon [icon]="userIcon"></fa-icon><span>Utilisateurs</span></a>
+    <a routerLink="/adresses"><fa-icon [icon]="addressIcon"></fa-icon><span>Adresses</span></a>
+    <a routerLink="/factures"><fa-icon [icon]="invoiceIcon"></fa-icon><span>Factures</span></a>
+    <!-- <a routerLink="/parametres"><fa-icon [icon]="settingsIcon"></fa-icon><span>Réglages</span></a> -->
+    <a href="#"><fa-icon [icon]="settingsIcon"></fa-icon><span>Réglages</span></a>
+
   </div>
+  <!--END SIDE BAR-->
+  <div id="header-ariane-nav">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb element-float-right">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+  </div>
+  
+
+  <!--STRAT CONTENT-->
+  <div class="data">
+    <div class="container" style="position: relative;">
+      <div class="row" id="router-outlet-style">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <!--END SIDE BAR-->
+
+  <!--START FOOTER BAR-->
+
+  <!--END FOOTER BAR-->
+</div>
