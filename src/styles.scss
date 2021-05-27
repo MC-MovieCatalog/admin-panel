@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootswatch/dist/superhero/bootswatch";
+
+/*Custom scrollbar*/
+
+* {
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
+.custom-array {
+  width: 145% !important;
+  padding: 10px !important;
+  margin-top: 100px !important;
+  margin-top: 150px !important;
+  word-wrap: break-word !important;
+}
+
+.element-float-right {
+  float: right !important;
+}
+
+.element-inline-block {
+  display: inline-block !important;
+}
+
+.center {
+  text-align: center;
+}
