@@ -1,29 +1,54 @@
 <div class="custom-array card">
-  <div class="card-header">Factures clients</div>
+  <div class="card-header">
+    Factures clients
+    <a href="#" type="button" class="btn default-add-button">
+      <fa-icon [icon]="this.iconService.plusSquareIcon"></fa-icon>&nbsp;&nbsp;Ajouter une facture
+    </a>
+  </div>
   <div class="card-body">
     <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">Type</th>
-            <th scope="col">Column heading</th>
-            <th scope="col">Column heading</th>
-            <th scope="col">Column heading</th>
+            <th scope="col">#</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Films</th>
+            <!-- <th scope="col">Adresse</th> -->
+            <!-- <th scope="col">Client</th> -->
+            <th scope="col">Actions</th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="table-active">
-            <th scope="row">Active</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr>
-            <th scope="row">Default</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
+        <tbody  *ngIf="invoices !== undefined; else emptyInvoice">
+          <tr *ngFor="let invoice of invoices; index as i">
+            <th>{{invoice.id}}</th>
+            <td>{{invoice.amount | number}}&euro;</td>
+            <td>
+              <span *ngFor="let movie of invoice.movies; index as i">
+                <span *ngIf="i == invoice.movies.length -1; else notLastInvoice">
+                  {{movie.title}}
+                </span>
+                <ng-template #notLastInvoice>
+                  <span>
+                    {{movie.title}} <br>
+                  </span>
+                </ng-template>
+              </span>
+            </td>
+            <td class="padding-top-25">
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <a href="#" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>
+                <a href="#" type="button" class="btn btn-info"><fa-icon [icon]="this.iconService.editIcon"></fa-icon></a>
+                <a href="#" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a>
+              </div>
+            </td>
           </tr>
         </tbody>
+        <ng-template #emptyInvoice>
+          <tbody>
+            <tr>
+              <td colspan="6">Aucune facture pour l'instant.</td>
+            </tr>
+          </tbody>
+      </ng-template>
     </table>
   </div>
 </div>
