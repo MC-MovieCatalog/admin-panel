@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IconComponentService } from 'src/app/services/icon.component.service';
 import { invoiceMock } from '../../../shared/mocks/invoice/invoice-mock';
 
 @Component({
@@ -9,10 +10,13 @@ import { invoiceMock } from '../../../shared/mocks/invoice/invoice-mock';
 export class ListInvoiceComponent implements OnInit {
 
   invoices = invoiceMock;
-  constructor() { }
+
+  constructor(
+    public iconService: IconComponentService
+  ) { }
 
   ngOnInit(): void {
-    console.log('invoices :', this.invoices);
+    console.log('invoices :', this.invoices.length);
   }
 
 }

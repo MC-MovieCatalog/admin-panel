@@ -1,3 +1,4 @@
+import { IconComponentService } from './../../../services/icon.component.service';
 import { Component, OnInit } from '@angular/core';
 import { addressMock } from '../../../shared/mocks/address/address-mock';
 
@@ -9,7 +10,9 @@ import { addressMock } from '../../../shared/mocks/address/address-mock';
 export class ListAddressComponent implements OnInit {
 
   addresses = addressMock;
-  constructor() { }
+  constructor(
+    public iconService: IconComponentService
+  ) { }
 
   ngOnInit(): void {
     console.log('addresses :', this.addresses);
