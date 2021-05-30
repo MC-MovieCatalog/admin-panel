@@ -1,29 +1,46 @@
 <div class="custom-array card">
-    <div class="card-header">Adresses clients</div>
+    <div class="card-header">
+      Adresses clients
+      <a href="#" type="button" class="btn default-add-button">
+        <fa-icon [icon]="this.iconService.plusSquareIcon"></fa-icon>&nbsp;&nbsp;Ajouter une adresse
+      </a>
+    </div>
     <div class="card-body">
       <table class="table table-hover">
           <thead>
             <tr>
+              <th scope="col">#</th>
+              <th scope="col">Adresse</th>
+              <th scope="col">Ville</th>
+              <th scope="col">Code postal</th>
               <th scope="col">Type</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
-          <tbody>
-            <tr class="table-active">
-              <th scope="row">Active</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>Column content</td>
-            </tr>
-            <tr>
-              <th scope="row">Default</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>Column content</td>
+          <tbody  *ngIf="addresses !== undefined; else emptyAddresses">
+            <tr *ngFor="let address of addresses; index as i">
+              <!-- <th scope="row">Active</th> -->
+              <th>{{address.id}}</th>
+              <td>{{address.streetNb}} {{address.address}}</td>
+              <td>{{address.city}}</td>
+              <td>{{address.postal}}</td>
+              <td>{{address.type}}</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                  <a href="#" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>
+                  <a href="#" type="button" class="btn btn-info"><fa-icon [icon]="this.iconService.editIcon"></fa-icon></a>
+                  <a href="#" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a>
+                </div>
+              </td>
             </tr>
           </tbody>
+          <ng-template #emptyAddresses>
+            <tbody>
+              <tr>
+                <td colspan="6">Aucune adresse pour l'instant.</td>
+              </tr>
+            </tbody>
+        </ng-template>
       </table>
     </div>
   </div>
