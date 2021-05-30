@@ -8,7 +8,7 @@
   <!--START NAV BAR-->
   <nav class="header-nav" id="navbar-index">
     <label class="custom-label">
-      <a  routerLink="/"><fa-icon [icon]="dashboardIcon"></fa-icon><span class="custom-span">Tableau de bord</span></a>
+      <a  routerLink="/"><fa-icon [icon]="this.iconService.dashboardIcon"></fa-icon><span class="custom-span">Tableau de bord</span></a>
     </label>
 
     <ul>
@@ -17,7 +17,7 @@
       <h2 class="element-inline-block">
         <img
           class="avatar rounded-circle"
-          src="https://pixabay.com/get/g74802b500e1cefcd2605f25f38a22d94122463b25f235606522abe9ec7c3aa6459cbf994361c74b83286317bc85caac5_640.jpg"
+          src="https://cdn.pixabay.com/photo/2017/11/03/18/26/man-2915187_960_720.jpg"
         />
         Nesly PETIT BERT
       </h2>
@@ -34,12 +34,12 @@
   <!--START SIDE BAR-->
   <div class="side-menu" id="sidebar-index">
     <!-- <hr /> -->
-    <a routerLink="/films"><fa-icon [icon]="filmIcon"></fa-icon><span>Films</span></a>
-    <a routerLink="/utilisateurs"><fa-icon [icon]="userIcon"></fa-icon><span>Utilisateurs</span></a>
-    <a routerLink="/adresses"><fa-icon [icon]="addressIcon"></fa-icon><span>Adresses</span></a>
-    <a routerLink="/factures"><fa-icon [icon]="invoiceIcon"></fa-icon><span>Factures</span></a>
+    <a routerLink="/films"><fa-icon [icon]="this.iconService.filmIcon"></fa-icon><span>Films</span></a>
+    <a routerLink="/utilisateurs"><fa-icon [icon]="this.iconService.userIcon"></fa-icon><span>Utilisateurs</span></a>
+    <a routerLink="/adresses"><fa-icon [icon]="this.iconService.addressIcon"></fa-icon><span>Adresses</span></a>
+    <a routerLink="/factures"><fa-icon [icon]="this.iconService.invoiceIcon"></fa-icon><span>Factures</span></a>
     <!-- <a routerLink="/parametres"><fa-icon [icon]="settingsIcon"></fa-icon><span>Réglages</span></a> -->
-    <a href="#"><fa-icon [icon]="settingsIcon"></fa-icon><span>Réglages</span></a>
+    <a href="#"><fa-icon [icon]="this.iconService.settingsIcon"></fa-icon><span>Réglages</span></a>
 
   </div>
   <!--END SIDE BAR-->
