@@ -1,1 +1,102 @@
-<p>dashboard works!</p>
+<div class="custom-array card">
+    <!-- DÉBUT BLOC USERS STATS -->
+    <div class="card-header">Utilisateurs</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-primary text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.usersIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalUsers }} Utilisateurs au total</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.userCheckIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalVerifyUsers }} Utilisateurs vérifiés</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-warning mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.userShieldIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalActiveUsers }} Utilisateurs actifs</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-success mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.userClockIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalWaitingVerifyUsers }} Utilisateurs non validés</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-success mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.usersSlashIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalUnactiveUser }} Utilisateurs inactifs</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </div>
+    <!-- FIN BLOC USERS STATS -->
+
+    <!-- DÉBUT BLOC USERS STATS -->
+    <div class="card-header">Films</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-primary text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.filmIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalMovies }} Films au total</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <!-- FIN BLOC USERS STATS -->
+  </div>
+  
