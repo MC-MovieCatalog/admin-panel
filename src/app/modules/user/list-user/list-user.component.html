@@ -1,32 +1,94 @@
 <div class="custom-array card">
-    <div class="card-header">Utilisateurs</div>
-    <div class="card-body">
+  <div class="card-header">
+    Utilisateurs
+    <a href="#" type="button" class="btn default-add-button">
+      <fa-icon [icon]="this.iconService.plusSquareIcon"></fa-icon>&nbsp;&nbsp;Ajouter un utilisateur
+    </a>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom complet</th>
+            <th scope="col">État du compte</th>
+            <th scope="col">Statut utilisateur</th>
+            <th scope="col">Validation CGU</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody  *ngIf="users !== undefined; else emptyUser">
+          <tr *ngFor="let user of users; index as i">
+            <!-- <th scope="row">Active</th> -->
+            <th class="col-sm-1">{{user.id}}</th>
+            <td class="col-sm-2">{{user.firstName}} {{user.lastName | uppercase}}</td>
 
-      <!-- <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Type</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
-            </tr>
-          </thead>
+            <!-- IS ACTIVE -->
+            <td class="center col-sm-1">
+              <span *ngIf="user.isActive === true; else userNotActivated">
+                  <fa-icon [icon]="this.iconService.checkCircleIcon" class="faCheck"></fa-icon>
+              </span>
+              <ng-template #userNotActivated>
+                <span *ngIf="user.isActive === false; else userStatusUnknonw">
+                  <fa-icon [icon]="this.iconService.checkCircleIcon" class="faUnCheck"></fa-icon>
+                </span>
+                <ng-template #userStatusUnknonw>
+                  <span>
+                    inconnu
+                  </span>
+                </ng-template>
+              </ng-template>
+            </td>
+
+            <!-- IS VERIFIED EMAIL -->
+            <td class="center col-sm-1">
+              <span *ngIf="user.isVerify === true; else emailNotVerified">
+                  <fa-icon [icon]="this.iconService.checkCircleIcon" class="faCheck"></fa-icon>
+              </span>
+              <ng-template #emailNotVerified>
+                <span *ngIf="user.isVerify === false; else emailVerifiedUnknonw">
+                  <fa-icon [icon]="this.iconService.checkCircleIcon" class="faUnCheck"></fa-icon>
+                </span>
+                <ng-template #emailVerifiedUnknonw>
+                  <span>
+                    inconnu
+                  </span>
+                </ng-template>
+              </ng-template>
+            </td>
+
+            <!-- AGREETERMS -->
+            <td class="center col-sm-1">
+              <span *ngIf="user.agreeTerms === true; else agreeTermesNotValidated">
+                  <fa-icon [icon]="this.iconService.checkCircleIcon" class="faCheck"></fa-icon>
+              </span>
+              <ng-template #agreeTermesNotValidated>
+                <span *ngIf="user.agreeTerms === false; else unknonwAgreeTerms">
+                  <fa-icon [icon]="this.iconService.checkCircleIcon" class="faUnCheck"></fa-icon>
+                </span>
+                <ng-template #unknonwAgreeTerms>
+                  <span>
+                    inconnue
+                  </span>
+                </ng-template>
+              </ng-template>
+            </td>
+            <td class="col-sm-1">
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <a href="#" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>
+                <a href="#" type="button" class="btn btn-info"><fa-icon [icon]="this.iconService.editIcon"></fa-icon></a>
+                <a href="#" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <ng-template #emptyUser>
           <tbody>
-            <tr class="table-active">
-              <th scope="row">Active</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>Column content</td>
-            </tr>
             <tr>
-              <th scope="row">Default</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td colspan="6">Aucune adresse pour l'instant.</td>
             </tr>
           </tbody>
-      </table> -->
-
-    </div>
+      </ng-template>
+    </table>
   </div>
-  
+</div>
