@@ -1,32 +1,69 @@
 <div class="custom-array card">
-    <div class="card-header">Films</div>
-    <div class="card-body">
-
-      <!-- <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Type</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
-            </tr>
-          </thead>
+  <div class="card-header">
+    Films
+    <a href="#" type="button" class="btn default-add-button">
+      <fa-icon [icon]="this.iconService.plusSquareIcon"></fa-icon>&nbsp;&nbsp;Ajouter un film
+    </a>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Durée</th>
+            <!-- <th scope="col">lien</th> -->
+            <th scope="col">Titre</th>
+            <th scope="col">Bande annonce</th>
+            <th scope="col">Description</th>
+            <!-- <th scope="col">Price</th> -->
+            <!-- <th scope="col">Couverture</th> -->
+            <!-- <th scope="col">Directeur</th> -->
+            <!-- <th scope="col">Slug</th> -->
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody  *ngIf="movies !== undefined; else emptyMovie">
+          <tr *ngFor="let movie of movies; index as i">
+            <th>{{movie.id}}</th>
+            <td>{{movie.duration}}</td>
+            <!-- <td>{{movie.link}}</td> -->
+            <td>{{movie.title}}</td>
+            <td>
+              <iframe 
+                width="164" 
+                height="84" 
+                [src]="this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+ movie.trailer)" 
+                title="{{movie.title}}" 
+                frameborder="0" 
+                allow="accelerometer; 
+                autoplay; 
+                clipboard-write; 
+                encrypted-media; 
+                gyroscope; 
+                picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </td>
+            <td>{{movie.description}}</td>
+            <!-- <td>{{movie.price}}</td> -->
+            <!-- <td>{{movie.cover}}</td> -->
+            <!-- <td>{{movie.director}}</td> -->
+            <td>
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <a href="#" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>
+                <a href="#" type="button" class="btn btn-info"><fa-icon [icon]="this.iconService.editIcon"></fa-icon></a>
+                <a href="#" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <ng-template #emptyMovie>
           <tbody>
-            <tr class="table-active">
-              <th scope="row">Active</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>Column content</td>
-            </tr>
             <tr>
-              <th scope="row">Default</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td>Column content</td>
+              <td colspan="6">Aucune adresse pour l'instant.</td>
             </tr>
           </tbody>
-      </table> -->
-
-    </div>
+      </ng-template>
+    </table>
   </div>
-  
+</div>
