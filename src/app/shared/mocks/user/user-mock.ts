@@ -9,7 +9,7 @@ for (const userItem of usersData) {
     user.id = userItem.id;
     user.roles = userItem.roles;
     user.isVerify = userItem.isVerify;
-    user.lastName = userItem.firstName;
+    user.lastName = userItem.lastName;
     user.firstName = userItem.firstName;
     user.isActive = userItem.isActive;
     user.agreeTerms = userItem.agreeTerms;

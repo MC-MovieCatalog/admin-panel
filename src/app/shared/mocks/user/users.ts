@@ -3,11 +3,11 @@ export const usersData = [
         id: 1,
         email: 'j.dubois@movie-catalog.fr',
         roles: ['ROLE_USER'],
-        isVerify: true,
+        isVerify: false,
         lastName: 'Jean',
         firstName: 'Dubois',
-        isActive: true,
-        agreeTerms: true
+        isActive: false,
+        agreeTerms: false
     },
     {
         id: 2,
@@ -23,11 +23,11 @@ export const usersData = [
         id: 3,
         email: 'g.sylvie@movie-catalog.fr',
         roles: ['ROLE_USER'],
-        isVerify: true,
+        isVerify: false,
         lastName: 'GILBERT',
         firstName: 'Sylvie',
-        isActive: true,
-        agreeTerms: true
+        isActive: false,
+        agreeTerms: false
     },
     {
         id: 4,
