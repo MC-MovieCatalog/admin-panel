@@ -18,7 +18,8 @@
 
 // nav
 .header-nav {
-  background: #5A3531;
+  // background: #5A3531;
+  background: rgb(219, 219, 219);
   // background: #1d2951;
   line-height: 80px;
   position: fixed;
@@ -34,7 +35,8 @@ label {
   cursor: pointer;
 }
 .custom-label > a > i, .custom-label > a > span, .custom-label > a > fa-icon {
-  color: white;
+  // color: white;
+  color: black;
   font-size: 20px;
   font-weight: 400;
 }
@@ -61,13 +63,13 @@ label {
   font-size: 20px;
   padding: 6px 15px;
   font-weight: 600;
-  background-color: rgb(55, 34, 246);
+  background-color: rgb(219, 219, 219);
   border-radius: 3px;
 }
 
 // nav ul li a:hover 
 .header-nav > nav > ul > li > a:hover{
-  background-color: rgb(49, 27, 214);
+  background-color: rgb(219, 219, 219);
   color: white;
   transition: 0.5s;
 }
@@ -75,13 +77,15 @@ label {
 // nav > ul > h2 
 .header-nav > ul > h2 {
   font-size: 20px !important;
-  color: white;
+  // color: white;
+  color: black;
   margin-left: 20px !important;
 }
 
 .side-menu {
   position: fixed;
-  background: #5A3531; // rgb(90, 53, 49)
+  // background: #5A3531; // rgb(90, 53, 49);
+  background: #DBDBDB; // rgb(219, 219, 219);
   // width: 250px;
   width: 14%;
   height: 100%;
@@ -103,20 +107,23 @@ label {
 }
 
 .side-menu > a:hover {
-  background: rgb(219, 219, 219, 0.4); // #DBDBDB
+  // background: rgb(219, 219, 219, 0.4); // #DBDBDB
+  background: rgba(90, 53, 49, 0.4); // #5A3531;
   padding-left: 20px;
 }
 
 .side-menu span {
   font-size: 20px;
   margin-left: 10px;
-  color: white;
+  // color: white;
+  color: black;
 }
 
 .side-menu i, .side-menu fa-icon {
   font-size: 20px;
   margin-left: 20px;
-  color: white;
+  // color: white;
+  color: black;
 }
 
 // nav .menu-bar 
@@ -180,7 +187,7 @@ label {
     width: 100%;
     text-align: center;
     left: 100%;
-    background-color: rgb(90, 53, 49, 0.9); // #DBDBDB
+    background-color: rgba(90, 53, 49, 0.9); // #DBDBDB
     transition: all 0.5s;
   }
 
@@ -244,7 +251,7 @@ hr {
 }
 
 #header-ariane-nav > nav > ol > li > a:hover {
-  background: rgb(219, 219, 219, 0.4); // #DBDBDB
+  background: rgba(219, 219, 219, 0.4); // #DBDBDB
   font-size: 20px;
   font-weight: 400;
   color: #5A3531;

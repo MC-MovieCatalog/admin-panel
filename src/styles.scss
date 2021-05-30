@@ -42,3 +42,43 @@
 .center {
   text-align: center;
 }
+
+/*Table style*/
+body tr:nth-child(even){
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+      
+body tr:nth-child(odd){
+  background-color: none !important;
+}
+
+/*Bouton add*/
+
+.default-add-button {
+  float: right !important; 
+  background-color: rgba(0, 251, 45, 0.2) !important; 
+  transition: all 0.5s !important;
+}
+
+.default-add-button > fa-icon {
+  color: rgba(0, 251, 45, 1) !important; 
+  font-weight: 400 !important;
+}
+
+/* Autres */
+.padding-top-25 {
+  padding-top: 25px;
+}
+
+/*icon colors*/
+.faCheck {
+  color: rgba(0, 251, 45, 1) !important
+}
+
+.faUnCheck {
+  color: rgba(215, 215, 215, 1) !important
+}
+
+.card-title-patched {
+  font-size: 20px !important;
+}
