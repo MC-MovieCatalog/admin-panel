@@ -46,9 +46,9 @@
   <div id="header-ariane-nav">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb element-float-right">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data</li>
+        <li class="breadcrumb-item"><a routerLink="/">Dashboard</a></li>
+        <li class="breadcrumb-item" *ngIf="this.currentRoute && this.currentRoute !== '/'"><a routerLink="{{this.currentRoute}}">{{this.currentRoute.substring(1) | titlecase}}</a></li>
+        <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
       </ol>
     </nav>
   </div>
@@ -58,7 +58,9 @@
   <div class="data">
     <div class="container" style="position: relative;">
       <div class="row" id="router-outlet-style">
-        <router-outlet></router-outlet>
+        <router-outlet
+        (activate)='onActivate($event)'
+        (deactivate)='onDeactivate($event)'></router-outlet>
       </div>
     </div>
   </div>
