@@ -35,6 +35,15 @@
                 [src]="this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+ movie.trailer)" 
                 title="{{movie.title}}" 
                 frameborder="0" 
+                allow="" 
+                allowfullscreen>
+              </iframe>
+              <!-- <iframe 
+                width="164" 
+                height="84" 
+                [src]="this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+ movie.trailer)" 
+                title="{{movie.title}}" 
+                frameborder="0" 
                 allow="accelerometer; 
                 autoplay; 
                 clipboard-write; 
@@ -42,7 +51,7 @@
                 gyroscope; 
                 picture-in-picture" 
                 allowfullscreen>
-              </iframe>
+              </iframe> -->
             </td>
             <td>{{movie.description}}</td>
             <!-- <td>{{movie.price}}</td> -->
@@ -65,5 +74,14 @@
           </tbody>
       </ng-template>
     </table>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+      <br>
+      <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="text-secondary" role="status">
+        <span>Chargement en cours...</span>
+      </div>
+    </div>
   </div>
 </div>
