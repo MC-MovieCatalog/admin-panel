@@ -27,7 +27,12 @@ export class DashboardComponent implements OnInit {
   totalUnactiveUser: number;
 
   /* Movies */
-  totalMovies: number;  
+  totalMovies: number;
+  totalBestMoviesRating: number;
+  totalMostViewedMovies: number; 
+  totalLowestRatedMovies: number;
+  totalVeryBadRatedMovies: number;
+  currentlyReadingMovies: number;
 
   constructor(
     public iconService: IconComponentService,
@@ -41,6 +46,11 @@ export class DashboardComponent implements OnInit {
     this.totalUnactiveUser = 0;
     /* Movies */
     this.totalMovies = 0;
+    this.totalBestMoviesRating = 0; // A faire
+    this.totalMostViewedMovies = 0; // A faire
+    this.totalLowestRatedMovies = 0; // A faire
+    this.totalVeryBadRatedMovies = 0; // A faire
+    this.currentlyReadingMovies = 0; // A faire
   }
 
   ngOnInit(): void {
