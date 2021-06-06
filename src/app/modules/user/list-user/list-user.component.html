@@ -85,10 +85,19 @@
         <ng-template #emptyUser>
           <tbody>
             <tr>
-              <td colspan="6">Aucune adresse pour l'instant.</td>
+              <td colspan="6">Aucun utilisateur pour l'instant.</td>
             </tr>
           </tbody>
       </ng-template>
     </table>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+      <br>
+      <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="text-secondary" role="status">
+        <span>Chargement en cours...</span>
+      </div>
+    </div>
   </div>
 </div>
