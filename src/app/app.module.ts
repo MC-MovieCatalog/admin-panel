@@ -1,3 +1,7 @@
+import { InvoiceService } from './services/models/invoice.service';
+import { AddressService } from './services/models/address.service';
+import { UserService } from './services/models/user.service';
+import { MovieService } from './services/models/movie.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,6 +20,10 @@ import { ListInvoiceComponent } from './modules/invoice/list-invoice/list-invoic
 import { DisplayEditInvoiceComponent } from './modules/invoice/display-edit-invoice/display-edit-invoice.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthenticationComponent } from './modules/authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +39,27 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ListAddressComponent,
     ListInvoiceComponent,
     DisplayEditInvoiceComponent,
-    DashboardComponent
+    DashboardComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      progressBar: true,
+      preventDuplicates: true
+    })
   ],
-  providers: [],
+  providers: [
+    MovieService,
+    UserService,
+    AddressService,
+    InvoiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
