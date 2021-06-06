@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card text-white bg-dark mb-3 text-center">
+                <div class="card text-white bg-success mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card text-white bg-warning mb-3 text-center">
+                <div class="card text-white bg-success mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card text-white bg-success mb-3 text-center">
+                <div class="card text-white bg-warning mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card text-white bg-success mb-3 text-center">
+                <div class="card text-white bg-warning mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
@@ -89,12 +89,82 @@
                                 <fa-icon [icon]="this.iconService.filmIcon"></fa-icon>
                             </div>
                             <div class="col-12">
-                                <h4 class="card-title card-title-patched">{{ totalMovies }} Films au total</h4>
+                                <h4 class="card-title card-title-patched">{{ totalMovies }} Films au total</h4><br>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div> 
+            <div class="col">
+                <div class="card bg-success text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.filmIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalBestMoviesRating }} Films ont obtenu la meilleur note</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-success text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.filmIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalMostViewedMovies }} Films les plus vus</h4><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-warning text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.filmIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalLowestRatedMovies }} Films ont obtenu une note moyenne</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-danger text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.filmIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ totalVeryBadRatedMovies }} Films ont obtenu une très mauvaise note</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="col">
+                <div class="card bg-success text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <fa-icon [icon]="this.iconService.filmIcon"></fa-icon>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="card-title card-title-patched">{{ currentlyReadingMovies }} Films en cours de lecture</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
     <!-- FIN BLOC USERS STATS -->
