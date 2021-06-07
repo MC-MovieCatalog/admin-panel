@@ -79,9 +79,9 @@ export class UserModel extends BasicModel {
     }
 
     public set isVerify(isVerifyToCreate: boolean) {
-        if (!isVerifyToCreate) {
+        /*if (!isVerifyToCreate) {
             throw new Error('Valeur incorrecte.');
-        }
+        }*/
         this._isVerify = isVerifyToCreate;
     }
 
@@ -90,9 +90,9 @@ export class UserModel extends BasicModel {
     }
 
     public set isActive(isActiveToCreate: boolean) {
-        if (!isActiveToCreate) {
+        /*if (!isActiveToCreate) {
             throw new Error('Valeur incorrecte.');
-        }
+        }*/
         this._isActive = isActiveToCreate;
     }
 
@@ -101,9 +101,9 @@ export class UserModel extends BasicModel {
     }
 
     public set agreeTerms(agreeTermsToCreate: boolean) {
-        if (!agreeTermsToCreate) {
+        /*if (!agreeTermsToCreate) {
             throw new Error('Vous devez validez les conditions d\'utilisation.');
-        }
+        }*/
         this._agreeTerms = agreeTermsToCreate;
     }
 
