@@ -141,6 +141,9 @@
                     <div class="card-body">
                         <h4 class="card-title text-color">{{ address.streetNb }} {{ address.address }}</h4>
                         <p class="card-text text-color">{{ address.postal }} {{ address.city }}</p>
+                        <a (click)="updateAddress(address.id)" type="button" class="btn default-add-button mt-3">
+                          <fa-icon [icon]="this.iconService.editIcon"></fa-icon>&nbsp;&nbsp;Mettre à jour cette adresse
+                        </a>
                     </div>
                 </div>
             </div>

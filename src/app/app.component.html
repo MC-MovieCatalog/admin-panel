@@ -45,7 +45,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb element-float-right">
         <li class="breadcrumb-item"><a routerLink="/">Dashboard</a></li>
-        <li class="breadcrumb-item" *ngIf="this.currentRoute && this.currentRoute !== '/'"><a routerLink="{{this.currentRoute}}">{{this.displayRoute + ' / ' + this.pageName | titlecase}}</a></li>
+        <!-- <li class="breadcrumb-item" *ngIf="this.currentRoute && this.currentRoute !== '/'"><a routerLink="{{this.currentRoute}}">{{this.displayRoute | titlecase}}</a></li> -->
       </ol>
     </nav>
   </div>

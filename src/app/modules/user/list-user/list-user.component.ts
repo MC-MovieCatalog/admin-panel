@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { IconComponentService } from 'src/app/services/icon.component.service';
 import { userMock } from '../../../shared/mocks/user/user-mock';
 import { ToastrService } from 'ngx-toastr';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-list-user',
@@ -19,7 +20,8 @@ export class ListUserComponent implements OnInit {
   constructor(
     public iconService: IconComponentService,
     private userService: UserService,
-    protected toastrService: ToastrService
+    protected toastrService: ToastrService,
+    private pageTitle: Title
   ) {
     this.loading = false;
   }
@@ -27,6 +29,7 @@ export class ListUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllUsers();
+    this.pageTitle.setTitle('Liste des utilisateurs');
   }
 
   getAllUsers(): void {

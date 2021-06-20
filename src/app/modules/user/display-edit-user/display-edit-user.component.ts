@@ -58,6 +58,10 @@ export class DisplayEditUserComponent implements OnInit {
     this.router.navigate(['/adresses/utilisateurs/' + this.userId]);
   }
 
+  updateAddress(addresseId: number): void {
+    this.router.navigate(['/adresses/edition-adresse/' + addresseId]);
+  }
+
   ifUserIdExists(): void {
     this.loading = true;
     if (this.route.params !== undefined) {
