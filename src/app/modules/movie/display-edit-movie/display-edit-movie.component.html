@@ -1,1 +1,159 @@
-<p>display-edit-movie works!</p>
+<div class="custom-array card">
+
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <br />
+        <div class="spinner-border text-secondary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="text-secondary" role="status">
+          <span>Chargement en cours...</span>
+        </div>
+    </div>
+
+    <div class="card-header" [innerText]="movie.title !== null && movie.title !== undefined && !this.isReadOnly ? 'Edition du film : ' + movie.title : this.isReadOnly ? 'Details du film' + movie.title : 'Edition film'"></div>
+    <div class="card-body" *ngIf="movieFormEdit" [formGroup]="movieFormEdit">
+        <div class="embed-responsive embed-responsive-1by1">
+            <iframe 
+                class="embed-responsive-item"
+                [src]="this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+ movie.link)" 
+                title="{{movie.title}}" 
+                frameborder="0" 
+                allow="" 
+                allowfullscreen
+            ></iframe>
+        </div>
+        <div class="form-group">
+        <label for="mcDuration" class="form-label mt-4">Durée du film</label>
+        <input
+            type="text"
+            id="mcDuration"
+            class="form-control"
+            placeholder="Enter une durée pour le film (ex: 1h30)"
+            name="movie-book-duration"
+            formControlName="duration"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcRefYoutube" class="form-label mt-4"
+            >Référence du film hébergé sur Youtube</label
+        >
+        <input
+            type="text"
+            class="form-control"
+            id="mcRefYoutube"
+            placeholder="Entrer la référence du lien Youtube (ex : IQuquL2xuzY)"
+            name="movie-book-link"
+            formControlName="link"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcDescription" class="form-label mt-4"
+            >Description du film</label
+        >
+        <textarea
+            class="form-control"
+            id="mcDescription"
+            rows="6"
+            name="movie-book-description"
+            formControlName="description"
+        ></textarea>
+        </div>
+
+        <div class="form-group">
+        <label for="mcTitre" class="form-label mt-4">Titre du film</label>
+        <input
+            type="text"
+            class="form-control"
+            id="mcTitre"
+            placeholder="Entrer le titre du film"
+            name="movie-book-title"
+            formControlName="title"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcPrice" class="form-label mt-4"
+            >Prix de vente / location</label
+        >
+        <input
+            type="number"
+            class="form-control"
+            id="mcPrice"
+            placeholder="Entrer un prix de vente / location"
+            name="movie-book-price"
+            formControlName="price"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcCover" class="form-label mt-4"
+            >Image de couverture du film</label
+        >
+        <input
+            type="text"
+            class="form-control"
+            id="mcCover"
+            placeholder="Entrer le lien direct vers l'image de couverture du film"
+            name="movie-book-cover"
+            formControlName="cover"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcDirector" class="form-label mt-4"
+            >Le directeur du film</label
+        >
+        <input
+            type="text"
+            class="form-control"
+            id="mcDirector"
+            placeholder="Entrer le nom du recteur du film"
+            name="movie-book-director"
+            formControlName="director"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcTrailer" class="form-label mt-4"
+            >Référence de la bande annonce Youtube</label
+        >
+        <input
+            type="text"
+            class="form-control"
+            id="mcTrailer"
+            placeholder="Entrer la référence de la bande annonce Youtube (ex : IQuquL2xuzY)"
+            name="movie-book-trailer"
+            formControlName="trailer"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcSlug" class="form-label mt-4">Slug du film</label>
+        <input
+            type="text"
+            class="form-control"
+            id="mcSlug"
+            placeholder="Entrer une adresse personnalisée pour le film (ex : die-hard-4)"
+            name="movie-book-slug"
+            formControlName="slug"
+        />
+        <small id="mcSlug" class="form-text text-muted" *ngIf="!this.isReadOnly">Le slug n'est pas obligatoire, il est automatiquement généré côté API si vide.</small>
+        </div>
+
+        <div class="mb-5"></div>
+        <div class="d-flex justify-content-center" *ngIf="loading">
+            <br />
+            <div class="spinner-border text-secondary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="text-secondary" role="status">
+                <span>Enregistrement en cours...</span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="updateMovie()" *ngIf="!this.isReadOnly">
+            Mettre à jour le film
+        </button>
+    </div>
+</div>

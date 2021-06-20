@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { IconComponentService } from 'src/app/services/icon.component.service';
 import { movieMock } from '../../../shared/mocks/movie/movie-mock';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-list-movie',
   templateUrl: './list-movie.component.html',
@@ -19,7 +20,8 @@ export class ListMovieComponent implements OnInit {
   constructor(
     public iconService: IconComponentService,
     public sanitizer: DomSanitizer,
-    private movieService: MovieService
+    private movieService: MovieService,
+    private toastrService: ToastrService
 
   ) {
     this.loading = false;
@@ -28,7 +30,6 @@ export class ListMovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllMovies();
-    // this.toastrService.success('Chargement des films terminé', 'Succes :');
   }
 
   getAllMovies(): void {
@@ -41,6 +42,20 @@ export class ListMovieComponent implements OnInit {
       }
     }, (error: ErrorEvent) => {
       console.log('error :', error);
+      this.movieService.getErrorLoad(error);
+      this.loading = false;
+    })
+  }
+
+  deleteMovie(movieId: number) {
+    
+    this.loading = true;
+    this.movieService.delete(movieId).subscribe((result) => {
+      if (result) {
+        this.toastrService.success('Le film a été supprimé avec succès !');
+        this.ngOnInit();
+      }
+    }, (error: ErrorEvent) => {
       this.movieService.getErrorLoad(error);
       this.loading = false;
     })

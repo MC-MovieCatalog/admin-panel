@@ -1,7 +1,7 @@
 import { BasicModel } from './basic.model';
 
 export class MovieModel extends BasicModel {
-    private _duration: string ;
+    private _duration: string;
     private _link: string;
     private _description: string;
     private _title: string;
@@ -119,11 +119,11 @@ export class MovieModel extends BasicModel {
         this._trailer = trailerToCreate;
     }
 
-    public get slug(): string | undefined {
+    public get slug(): string {
         return this._slug;
     }
 
-    public set slug(slugToCreate: string | undefined) {
+    public set slug(slugToCreate: string) {
         if (!slugToCreate) {
             throw new Error('Le slug est obligatoire.');
         }

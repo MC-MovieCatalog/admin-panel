@@ -1,7 +1,7 @@
 <div class="custom-array card">
   <div class="card-header">
     Films
-    <a href="#" type="button" class="btn default-add-button">
+    <a routerLink="/films/ajouter-film" type="button" class="btn default-add-button">
       <fa-icon [icon]="this.iconService.plusSquareIcon"></fa-icon>&nbsp;&nbsp;Ajouter un film
     </a>
   </div>
@@ -59,9 +59,10 @@
             <!-- <td>{{movie.director}}</td> -->
             <td>
               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                <a href="#" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>
-                <a href="#" type="button" class="btn btn-info"><fa-icon [icon]="this.iconService.editIcon"></fa-icon></a>
-                <a href="#" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a>
+                <a [routerLink]="['details-film/' + movie.id]" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>
+                <a [routerLink]="['edition-film/' + movie.id]" type="button" class="btn btn-info"><fa-icon [icon]="this.iconService.editIcon"></fa-icon></a>
+                <a (click)="deleteMovie(movie.id)" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a>
+                <!-- <a href="#" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a> -->
               </div>
             </td>
           </tr>
