@@ -12,8 +12,6 @@
     </label>
 
     <ul>
-      <!-- <li style="display: inline-block !important"><a href="#">Logout</a></li> -->
-      <!-- <a href="#"><i class="fa fa-user"></i><span>Customers</span></a> -->
       <h2 class="element-inline-block">
         <img
           class="avatar rounded-circle"
@@ -36,10 +34,10 @@
     <!-- <hr /> -->
     <a routerLink="/films"><fa-icon [icon]="this.iconService.filmIcon"></fa-icon><span>Films</span></a>
     <a routerLink="/utilisateurs"><fa-icon [icon]="this.iconService.userIcon"></fa-icon><span>Utilisateurs</span></a>
-    <a routerLink="/adresses"><fa-icon [icon]="this.iconService.addressIcon"></fa-icon><span>Adresses</span></a>
+    <!-- <a routerLink="/adresses"><fa-icon [icon]="this.iconService.addressIcon"></fa-icon><span>Adresses</span></a> -->
     <a routerLink="/factures"><fa-icon [icon]="this.iconService.invoiceIcon"></fa-icon><span>Factures</span></a>
     <!-- <a routerLink="/parametres"><fa-icon [icon]="settingsIcon"></fa-icon><span>Réglages</span></a> -->
-    <a href="#"><fa-icon [icon]="this.iconService.settingsIcon"></fa-icon><span>Réglages</span></a>
+    <!-- <a href="#"><fa-icon [icon]="this.iconService.settingsIcon"></fa-icon><span>Réglages</span></a> -->
 
   </div>
   <!--END SIDE BAR-->
@@ -47,8 +45,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb element-float-right">
         <li class="breadcrumb-item"><a routerLink="/">Dashboard</a></li>
-        <li class="breadcrumb-item" *ngIf="this.currentRoute && this.currentRoute !== '/'"><a routerLink="{{this.currentRoute}}">{{this.currentRoute.substring(1) | titlecase}}</a></li>
-        <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
+        <li class="breadcrumb-item" *ngIf="this.currentRoute && this.currentRoute !== '/'"><a routerLink="{{this.currentRoute}}">{{this.displayRoute + ' / ' + this.pageName | titlecase}}</a></li>
       </ol>
     </nav>
   </div>
