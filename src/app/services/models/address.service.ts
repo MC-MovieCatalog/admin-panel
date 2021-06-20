@@ -8,8 +8,14 @@ import { GenericCrudService } from '../basic-crud/generic.crud.service';
 
 @Injectable()
 export class AddressService extends GenericCrudService<AddressModel> {
-    constructor(http: HttpClient,
-                protected toastrService: ToastrService) {
-        super(http, toastrService, API_DEFAULT_PATHS.ROUTE_ADDRESS);
+  constructor(
+    http: HttpClient,
+    protected toastrService: ToastrService) 
+    {
+    super(
+      http, 
+      toastrService, 
+      API_DEFAULT_PATHS.ROUTE_ADDRESS
+    );
   }
 }

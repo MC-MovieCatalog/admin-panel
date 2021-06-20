@@ -1,0 +1,69 @@
+<div class="custom-array card">
+  <div class="card-header">{{ addressesBlocTitle }}</div>
+  <div class="card-body" *ngIf="userForm" [formGroup]="userForm">
+    <div class="form-group">
+      <label for="mcStreetNb" class="form-label mt-4">Numéro de rue</label>
+      <input
+        type="text"
+        id="mcStreetNb"
+        class="form-control"
+        placeholder="Entrer un numéro de rue"
+        name="stree-nb"
+        formControlName="streetNb"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="mcAddress" class="form-label mt-4">Adresse</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mcAddress"
+        placeholder="Enter une adresse"
+        name="address"
+        formControlName="address"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="mcPostalCode" class="form-label mt-4">Code postal</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mcPostalCode"
+        placeholder="Entrer le code postal"
+        name="postal"
+        formControlName="postal"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="mcType" class="form-label mt-4">Type d'adresse</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mcType"
+        placeholder="Entrer un type d'adresse"
+        name="type"
+        formControlName="type"
+      />
+      <br />
+    </div>
+
+    <!--ROLES-->
+    <!--Select multiple à mettre en place-->
+
+    <div class="form-group">
+      <label for="mcCity" class="form-label mt-4">Ville</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mcCity"
+        placeholder="Entrer la ville"
+        name="city"
+        formControlName="city"
+      />
+      <br />
+    </div>
+  </div>
+</div>

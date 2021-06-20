@@ -1,1 +1,126 @@
-<p>display-edit-address works!</p>
+<div class="custom-array card">
+  <div class="d-flex justify-content-center" *ngIf="loading">
+    <br />
+    <div class="spinner-border text-secondary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="text-secondary" role="status">
+      <span>Chargement en cours...</span>
+    </div>
+  </div>
+
+    <div class="card-header" 
+        [innerText]="
+        (user.lastName !== null && user.lastName !== undefined) 
+        && (user.lastName !== null && user.lastName !== undefined) 
+        ? 'Adresse de : ' + user.lastName + ' ' + user.firstName  : 'Adresse utilisateur'">
+    </div>
+
+    <div class="card-body" *ngIf="addressFormEdit" [formGroup]="addressFormEdit">
+        <div class="form-group">
+        <label for="mcStreetNb" class="form-label mt-4">Numéro de rue</label>
+        <input
+            type="text"
+            id="mcStreetNb"
+            class="form-control"
+            placeholder="Entrer un numéro de rue"
+            name="stree-nb"
+            formControlName="streetNb"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcAddress" class="form-label mt-4">Adresse</label>
+        <input
+            type="text"
+            class="form-control"
+            id="mcAddress"
+            placeholder="Enter une adresse"
+            name="address"
+            formControlName="address"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcPostalCode" class="form-label mt-4">Code postal</label>
+        <input
+            type="text"
+            class="form-control"
+            id="mcPostalCode"
+            placeholder="Entrer le code postal"
+            name="postal"
+            formControlName="postal"
+        />
+        </div>
+
+        <div class="form-group">
+        <label for="mcType" class="form-label mt-4">Type d'adresse</label>
+        <input
+            type="text"
+            class="form-control"
+            id="mcType"
+            placeholder="Entrer un type d'adresse"
+            name="type"
+            formControlName="type"
+        />
+        <br />
+        </div>
+
+        <!--ROLES-->
+        <!--Select multiple à mettre en place-->
+
+        <div class="form-group">
+        <label for="mcCity" class="form-label mt-4">Ville</label>
+        <input
+            type="text"
+            class="form-control"
+            id="mcCity"
+            placeholder="Entrer la ville"
+            name="city"
+            formControlName="city"
+        />
+        <br />
+        </div>
+
+        <div class="d-flex justify-content-center" *ngIf="loading">
+        <br />
+        <div class="spinner-border text-secondary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="text-secondary" role="status">
+            <span>Chargement en cours...</span>
+        </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="updateAddress()">
+            Mette à jour l'adresse
+        </button>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-3 float-left">
+                    <button type="submit" class="btn btn-primary mt-3" (click)="updateAddress()" *ngIf="!this.isReadOnly">
+                        Mettre à jour l'adresse
+                    </button>
+                </div>
+                <div class="col-md-3 float-right">
+                </div>
+            </div>
+            <div class="col-md-6 mb-5"></div>
+        </div>
+
+        <div class="col-sm-12 mt-4">
+            <div class="card-header mb-5">Utilisateur lié</div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card text-white bg-light mb-3 max-width">
+                        <div class="card-header text-color">{{ user.firstName }} {{ user.lastName }}</div>
+                        <div class="card-body">
+                            <h4 class="card-title text-color">{{ user.email }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>

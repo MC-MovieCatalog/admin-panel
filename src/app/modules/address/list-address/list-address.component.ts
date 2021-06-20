@@ -37,7 +37,6 @@ export class ListAddressComponent implements OnInit {
         this.loading = false;
       }
     }, (error: ErrorEvent) => {
-      console.log('error :', error);
       this.addressService.getErrorLoad(error);
       this.loading = false;
     })

@@ -2,7 +2,7 @@ import { BasicModel } from './basic.model';
 // import { UserModel } from './user.model';
 
 export class AddressModel extends BasicModel {
-    private _streeNb: string;
+    private _streetNb: string;
     private _address: string ;
     private _postal: string;
     private _type: string;
@@ -15,14 +15,14 @@ export class AddressModel extends BasicModel {
     }
 
     public get streetNb(): string {
-        return this._streeNb;
+        return this._streetNb;
     }
 
     public set streetNb(streetNbToCreate: string) {
         if (!streetNbToCreate) {
             throw new Error('Ce numéro est invalide.');
         }
-        this._streeNb = streetNbToCreate;
+        this._streetNb = streetNbToCreate;
     }
 
     public get address(): string {
