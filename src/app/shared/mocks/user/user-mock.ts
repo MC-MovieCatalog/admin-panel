@@ -8,7 +8,7 @@ for (const userItem of usersData) {
 
     user.id = userItem.id;
     user.roles = userItem.roles;
-    user.isVerify = userItem.isVerify;
+    user.isVerified = userItem.isVerified;
     user.lastName = userItem.lastName;
     user.firstName = userItem.firstName;
     user.isActive = userItem.isActive;

@@ -12,7 +12,7 @@ export class UserModel extends BasicModel {
     private _agreeTerms: boolean;
     private readonly _agreeTermsValidateAt?: Date;
     private readonly _inscriptionDate?: Date;
-    private _addresses?: AddressModel[];
+    private _addresses?: AddressModel[]= [];
 
 
     public constructor() {
@@ -74,11 +74,11 @@ export class UserModel extends BasicModel {
         this._roles = rolesToCreate;
     }
 
-    public get isVerify(): boolean {
+    public get isVerified(): boolean {
         return this._isVerify;
     }
 
-    public set isVerify(isVerifyToCreate: boolean) {
+    public set isVerified(isVerifyToCreate: boolean) {
         /*if (!isVerifyToCreate) {
             throw new Error('Valeur incorrecte.');
         }*/
@@ -137,11 +137,11 @@ export class UserModel extends BasicModel {
     }
     */
 
-    public get addresses(): AddressModel[] | undefined {
+    public get addresses(): AddressModel[] {
         return this._addresses;
     }
 
-    public set addresses(addressesToCreate: AddressModel[] | undefined) {
+    public set addresses(addressesToCreate: AddressModel[]) {
 
         if (addressesToCreate) {
             if (!(addressesToCreate instanceof AddressModel)) {

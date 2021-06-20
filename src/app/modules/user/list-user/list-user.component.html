@@ -1,7 +1,7 @@
 <div class="custom-array card">
   <div class="card-header">
     Utilisateurs
-    <a href="#" type="button" class="btn default-add-button">
+    <a routerLink="/ajouter-utilisateur" type="button" class="btn default-add-button">
       <fa-icon [icon]="this.iconService.plusSquareIcon"></fa-icon>&nbsp;&nbsp;Ajouter un utilisateur
     </a>
   </div>
@@ -42,11 +42,11 @@
 
             <!-- IS VERIFIED EMAIL -->
             <td class="center col-sm-1">
-              <span *ngIf="user.isVerify === true; else emailNotVerified">
+              <span *ngIf="user.isVerified === true; else emailNotVerified">
                   <fa-icon [icon]="this.iconService.checkCircleIcon" class="faCheck"></fa-icon>
               </span>
               <ng-template #emailNotVerified>
-                <span *ngIf="user.isVerify === false; else emailVerifiedUnknonw">
+                <span *ngIf="user.isVerified === false; else emailVerifiedUnknonw">
                   <fa-icon [icon]="this.iconService.checkCircleIcon" class="faUnCheck"></fa-icon>
                 </span>
                 <ng-template #emailVerifiedUnknonw>
@@ -75,9 +75,9 @@
             </td>
             <td class="col-sm-1">
               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                <a href="#" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>
-                <a href="#" type="button" class="btn btn-info"><fa-icon [icon]="this.iconService.editIcon"></fa-icon></a>
-                <a href="#" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a>
+                <a [routerLink]="['details-utilisateur/' + user.id]" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>
+                <a [routerLink]="['edition-utilisateur/' + user.id]" type="button" class="btn btn-info"><fa-icon [icon]="this.iconService.editIcon"></fa-icon></a>
+                <a (click)="deleteUser(user.id)" type="button" class="btn btn-danger"><fa-icon [icon]="this.iconService.deleteIcon"></fa-icon></a>
               </div>
             </td>
           </tr>

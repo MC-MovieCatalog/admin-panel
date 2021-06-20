@@ -1,1 +1,109 @@
-<p>create-user works!</p>
+<div class="custom-array card">
+  <div class="card-header">Ajout utilisateur</div>
+  <div class="card-body" *ngIf="userForm" [formGroup]="userForm">
+    <div class="form-group">
+      <label for="mcUserLastName" class="form-label mt-4">Nom</label>
+      <input
+        type="text"
+        id="mcUserLastName"
+        class="form-control"
+        placeholder="Enter le nom de l'utilisateur"
+        name="last-name"
+        formControlName="lastName"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="mcFirstName" class="form-label mt-4">Prénom</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mcFirstName"
+        placeholder="Enter le prénom de l'utilisateur"
+        name="first-name"
+        formControlName="firstName"
+      />
+    </div>
+
+    <div class="form-group">
+        <label for="mcEmail" class="form-label mt-4">Email</label>
+        <input
+            type="email"
+            class="form-control"
+            id="mcEmail"
+            placeholder="Entrer l'email de l'utilisateur"
+            name="email" formControlName="email"
+        />
+    </div>
+
+    <div class="form-group">
+      <label for="mcPassword" class="form-label mt-4">Mot de passe temporaire</label>
+      <input
+        type="password"
+        class="form-control"
+        id="mcPassword"
+        placeholder="Entrer un mot de passe (l'utilisateur devra le changer)"
+        name="password"
+        formControlName="password"
+      />
+      <br>
+    </div>
+
+    <!--ROLES-->
+    <!--Select multiple à mettre en place-->
+    
+    <div class="form-check form-switch">
+      <label for="mcIsVerify" class="form-check-label">Vérification</label>
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="mcIsVerify"
+        placeholder="Voulez-vous que l'utilisateur vérifie son compte ?"
+        name="is-verify"
+        formControlName="isVerified"
+      />
+      <br>
+      <small id="mcA" class="form-text text-muted">La vérification fonctionne avec l'activation.</small>
+    </div>
+
+    <div class="form-check form-switch">
+        <label for="mcIsActive" class="form-check-label">Activation</label>
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="mcIsActive"
+          placeholder="Voulez-vous activer ce compte immédiatement ?"
+          name="is-active"
+          formControlName="isActive"
+        />
+        <br>
+        <small id="mcV" class="form-text text-muted">L'activation fonctionne avec la vérification.</small>
+    </div>
+
+    <div class="form-check form-switch">
+        <label for="mcAgreeTerms" class="form-check-label">CGU</label>
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="mcAgreeTerms"
+          placeholder="L'utilisateur accepte-t-il nos termes d'utilisation?"
+          name="cgu"
+          formControlName="agreeTerms"
+        />
+    </div>
+
+    <div class="mb-5"></div>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+      <br />
+      <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="text-secondary" role="status">
+        <span>Enregistrement en cours...</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onCreateUser()">
+      Ajouter l'utilisateur
+    </button>
+  </div>
+</div>

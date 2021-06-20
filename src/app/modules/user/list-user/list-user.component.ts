@@ -3,6 +3,7 @@ import { UserService } from './../../../services/models/user.service';
 import { Component, OnInit } from '@angular/core';
 import { IconComponentService } from 'src/app/services/icon.component.service';
 import { userMock } from '../../../shared/mocks/user/user-mock';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-user',
@@ -17,7 +18,8 @@ export class ListUserComponent implements OnInit {
 
   constructor(
     public iconService: IconComponentService,
-    private userService: UserService
+    private userService: UserService,
+    protected toastrService: ToastrService
   ) {
     this.loading = false;
   }
@@ -37,6 +39,20 @@ export class ListUserComponent implements OnInit {
       }
     }, (error: ErrorEvent) => {
       console.log('error :', error);
+      this.userService.getErrorLoad(error);
+      this.loading = false;
+    })
+  }
+
+  deleteUser(userId: number) {
+    
+    this.loading = true;
+    this.userService.delete(userId).subscribe((result) => {
+      if (result) {
+        this.toastrService.success('Les informations de l\'utilisateur ont été supprimées avec succès !');
+        this.ngOnInit();
+      }
+    }, (error: ErrorEvent) => {
       this.userService.getErrorLoad(error);
       this.loading = false;
     })

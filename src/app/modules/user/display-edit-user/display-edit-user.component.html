@@ -1,1 +1,162 @@
-<p>display-edit-user works!</p>
+<div class="custom-array card">
+
+    <div class="d-flex justify-content-center" *ngIf="loading">
+        <br />
+        <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+        </div>
+        <div class="text-secondary" role="status">
+        <span>Chargement en cours...</span>
+        </div>
+    </div>
+
+    <div class="card-header" 
+        [innerText]="
+        (user.lastName !== null && user.lastName !== undefined) 
+        && (user.lastName !== null && user.lastName !== undefined) 
+        && !this.isReadOnly ? 'Edition des informations utilisateur : ' + user.lastName + ' ' + user.firstName  : this.isReadOnly ? 'Détails de l\'utilisateur : ' + user.lastName + ' ' + user.firstName : 'Edition des informations utilisateur'">
+    </div>
+
+    <div class="card-body" *ngIf="userFormEdit" [formGroup]="userFormEdit">
+        <div class="form-group">
+        <label for="mcUserLastName" class="form-label mt-4">Nom</label>
+        <input
+            type="text"
+            id="mcUserLastName"
+            class="form-control"
+            placeholder="Enter le nom de l'utilisateur"
+            name="last-name"
+            formControlName="lastName"
+        />
+    </div>
+
+    <div class="form-group">
+      <label for="mcFirstName" class="form-label mt-4">Prénom</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mcFirstName"
+        placeholder="Enter le prénom de l'utilisateur"
+        name="first-name"
+        formControlName="firstName"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="mcEmail" class="form-label mt-4">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="mcEmail"
+        placeholder="Entrer l'email de l'utilisateur"
+        name="email"
+        formControlName="email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="mcPassword" class="form-label mt-4"
+        >Mot de passe temporaire</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        id="mcPassword"
+        placeholder="Entrer un mot de passe (l'utilisateur devra le changer)"
+        name="password"
+        formControlName="password"
+      />
+      <br />
+    </div>
+
+    <!--ROLES-->
+    <!--Select multiple à mettre en place-->
+
+    <div class="form-check form-switch">
+      <label for="mcIsVerify" class="form-check-label">Vérification</label>
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="mcIsVerify"
+        placeholder="Voulez-vous que l'utilisateur vérifie son compte ?"
+        name="is-verify"
+        formControlName="isVerified"
+      />
+      <br />
+      <small id="mcA" class="form-text text-muted"
+        >La vérification fonctionne avec l'activation.</small
+      >
+    </div>
+
+    <div class="form-check form-switch">
+      <label for="mcIsActive" class="form-check-label">Activation</label>
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="mcIsActive"
+        placeholder="Voulez-vous activer ce compte immédiatement ?"
+        name="is-active"
+        formControlName="isActive"
+      />
+      <br />
+      <small id="mcV" class="form-text text-muted"
+        >L'activation fonctionne avec la vérification.</small
+      >
+    </div>
+
+    <div class="form-check form-switch">
+      <label for="mcAgreeTerms" class="form-check-label">CGU</label>
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="mcAgreeTerms"
+        placeholder="L'utilisateur accepte-t-il nos termes d'utilisation?"
+        name="cgu"
+        formControlName="agreeTerms"
+      />
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div [ngClass]="!this.isReadOnly ? 'col-md-3 float-left' : 'col-md-3 float-left'">
+                <a (click)="addAddress()" type="button" class="btn default-add-button mt-3">
+                    <fa-icon [icon]="this.iconService.plusSquareIcon"></fa-icon>&nbsp;&nbsp;Ajouter une adresse
+                </a>
+            </div>
+            <div class="col-md-3 float-right">
+                <button type="submit" class="btn btn-primary mt-3" (click)="updateUser()" *ngIf="!this.isReadOnly">
+                    Mettre à jour
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6 mb-5"></div>
+    </div>
+
+    <div class="col-sm-12 mt-4">
+        <div class="card-header mb-5" [innerText]="user.addresses.length > 1 ? 'Listes des adresses de l\'utilisateur' : 'Adresse de l\'utilisateur'">Ajout utilisateur</div>
+        <div class="row">
+            <div class="col-md-3" *ngFor="let address of user.addresses">
+                <div class="card text-white bg-light mb-3 max-width">
+                    <div class="card-header text-color">{{ address.type }}</div>
+                    <div class="card-body">
+                        <h4 class="card-title text-color">{{ address.streetNb }} {{ address.address }}</h4>
+                        <p class="card-text text-color">{{ address.postal }} {{ address.city }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    
+    <div class="mb-5"></div>
+    <div class="d-flex justify-content-center" *ngIf="loading">
+      <br />
+      <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="text-secondary" role="status">
+        <span>Enregistrement en cours...</span>
+      </div>
+    </div>
+    
+  </div>
+</div>
