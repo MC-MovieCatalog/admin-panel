@@ -15,7 +15,8 @@ export abstract class GenericCrudService<T> implements GenericCrudOperations<T> 
   ) {}
 
   save(t: T): Observable<T> {
-    return this.http.post<T>(API_DEFAULT_PATHS.BASE_URL_API.value + this.route + 'Post/', t).pipe(catchError( err => this.requestCatchError(err, 'L\'enregistrement')));
+    console.log(API_DEFAULT_PATHS.BASE_URL_API.value + this.route + 'Post');
+    return this.http.post<T>(API_DEFAULT_PATHS.BASE_URL_API.value + this.route + 'Post', t).pipe(catchError( err => this.requestCatchError(err, 'L\'enregistrement')));
   }
 
   update(id: number, t: T): Observable<T> {
@@ -57,10 +58,20 @@ export abstract class GenericCrudService<T> implements GenericCrudOperations<T> 
 
   getErrorLoad(apiError: any): void {
     if (apiError.status == 500) {
+      console.log('500  :', apiError);
       this.toastrService.error(apiError.error.Error, 'Erreur ' + apiError.status);
     } else {
       if (apiError) {
-        this.toastrService.warning(apiError.error.Error, 'Erreur ' + apiError.status);
+        console.log('Autre :', apiError);
+        for (const error of apiError.error) {
+          if (error.message) {
+            this.toastrService.warning(error.field + ' : ' + error.message, 'Erreur : ' + apiError.status);
+          } else {
+            if (error.error) {
+              this.toastrService.warning(error.field + ' : ' + error.error, 'Erreur : ' + apiError.status);
+            }
+          }
+        }
       }
     }
   }
