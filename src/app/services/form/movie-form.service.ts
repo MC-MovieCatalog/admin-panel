@@ -1,4 +1,3 @@
-import { StateService } from '../state-app.service';
 import { CustomFormBuilder, MOVIE_VALIDATORS } from './form-validators/movie-validators';
 import { MovieService } from '../models/movie.service';
 import { MovieModel } from '../../shared/models/movie.model';
@@ -17,8 +16,7 @@ export class MovieFormComponentsService {
     constructor(
         protected router: Router,
         protected toastrService: ToastrService,
-        private movieService: MovieService,
-        private appStateService: StateService
+        private movieService: MovieService
     ) {
     }
 
