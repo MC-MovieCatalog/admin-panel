@@ -33,7 +33,7 @@ export class StatsComponentService {
     if (users.length > 0) {
       let verifyUserLenght = 0;
       for (let index = 0; index < users.length; index++) {
-        if (users[index].isVerify !== undefined && users[index].isVerify !== null && users[index].isVerify === true) {
+        if (users[index].isVerified !== undefined && users[index].isVerified !== null && users[index].isVerified === true) {
           verifyUserLenght += 1;
         }
       }
@@ -47,7 +47,7 @@ export class StatsComponentService {
     if (users.length > 0) {
       let awaitingVerifyUserLenght = 0;
       for (let index = 0; index < users.length; index++) {
-        if (users[index].isVerify !== undefined && (users[index].isVerify === null || users[index].isVerify === false)) {
+        if (users[index].isVerified !== undefined && (users[index].isVerified === null || users[index].isVerified === false)) {
           awaitingVerifyUserLenght += 1;
         }
       }
