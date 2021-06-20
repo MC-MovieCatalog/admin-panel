@@ -4,28 +4,17 @@
 
 ### ng --version
 
-     _                      _                 ____ _     ___
-    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
-  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
- /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-                |___/
-
-
 Angular CLI: 12.0.4
 Node: 14.17.1
 Package Manager: npm 7.17.0
 OS: win32 x64
 
-Angular:
-...
-
-Package                      Version
 ------------------------------------------------------
-@angular-devkit/architect    0.1200.4 (cli-only)
-@angular-devkit/core         12.0.4 (cli-only)
-@angular-devkit/schematics   12.0.4 (cli-only)
-@schematics/angular          12.0.4 (cli-only)
+
+@angular-devkit/architect : 0.1200.4 (cli-only)
+@angular-devkit/core : 12.0.4 (cli-only)
+@angular-devkit/schematics : 12.0.4 (cli-only)
+@schematics/angular : 12.0.4 (cli-only)
 
 ------------------------------------------------------
 tsc -v       
