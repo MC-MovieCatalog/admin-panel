@@ -24,6 +24,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthenticationComponent } from './modules/authentication/authentication.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InvoiceFormComponentsService } from './services/form/invoice-form.service';
+import { NotFoundComponent } from './modules/not-found/not-found.component';
+import { AddressFormComponentsService } from './services/form/address-form.service';
+import { MovieFormComponentsService } from './services/form/movie-form.service';
+import { UserFormComponentService } from './services/form/user-form.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,8 @@ import { AuthenticationComponent } from './modules/authentication/authentication
     ListInvoiceComponent,
     DisplayEditInvoiceComponent,
     DashboardComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +55,7 @@ import { AuthenticationComponent } from './modules/authentication/authentication
     FontAwesomeModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 5000,
       progressBar: true,
@@ -58,7 +66,11 @@ import { AuthenticationComponent } from './modules/authentication/authentication
     MovieService,
     UserService,
     AddressService,
-    InvoiceService
+    InvoiceService,
+    InvoiceFormComponentsService,
+    AddressFormComponentsService,
+    MovieFormComponentsService,
+    UserFormComponentService
   ],
   bootstrap: [AppComponent]
 })
