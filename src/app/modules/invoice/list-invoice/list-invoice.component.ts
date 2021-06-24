@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { IconComponentService } from 'src/app/services/icon.component.service';
 import { invoiceMock } from '../../../shared/mocks/invoice/invoice-mock';
 import { InvoiceModel } from 'src/app/shared/models/invoice.model';
+import { UserModel } from 'src/app/shared/models/user.model';
+import { UserService } from 'src/app/services/models/user.service';
 
 @Component({
   selector: 'app-list-invoice',

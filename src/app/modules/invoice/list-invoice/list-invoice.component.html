@@ -13,13 +13,13 @@
             <th scope="col">Montant</th>
             <th scope="col">Films</th>
             <!-- <th scope="col">Adresse</th> -->
-            <!-- <th scope="col">Client</th> -->
+            <th scope="col">Client</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody  *ngIf="invoices !== undefined; else emptyInvoice">
           <tr *ngFor="let invoice of invoices; index as i">
-            <th>{{invoice.id}}</th>
+            <td>{{invoice.id}}</td>
             <td>{{invoice.amount | number}}&euro;</td>
             <td>
               <span *ngFor="let movie of invoice.movies; index as i">
@@ -33,6 +33,7 @@
                 </ng-template>
               </span>
             </td>
+            <td>{{ invoice.customer.firstName + ' ' + invoice.customer.lastName }}</td>
             <td class="padding-top-25">
               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                 <a href="#" type="button" class="btn btn-success"><fa-icon [icon]="this.iconService.infoCircleIcon"></fa-icon></a>

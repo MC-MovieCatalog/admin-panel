@@ -1,8 +1,10 @@
 import { BasicModel } from './basic.model';
 import { MovieModel } from './movie.model';
+import { UserModel } from './user.model';
 
 export class InvoiceModel extends BasicModel {
     private _customerId: number;
+    private _customer?: UserModel;
     private _addressId: number ;
     private _amount: number;
     private _createdAt?: Date;
@@ -77,5 +79,16 @@ export class InvoiceModel extends BasicModel {
             throw new Error('Movie(s) invalide(s).');
         }
         this._movies = moviesToCreate;
+    }
+
+    public get customer(): UserModel {
+        return this._customer;
+    }
+
+    public set customer(customerToCreate: UserModel) {
+        if (!customerToCreate) {
+            throw new Error('Client invalide.');
+        }
+        this._customer = customerToCreate;
     }
 }
