@@ -15,7 +15,6 @@ export abstract class GenericCrudService<T> implements GenericCrudOperations<T> 
   ) {}
 
   save(t: T): Observable<T> {
-    console.log(API_DEFAULT_PATHS.BASE_URL_API.value + this.route + 'Post');
     return this.http.post<T>(API_DEFAULT_PATHS.BASE_URL_API.value + this.route + 'Post', t).pipe(catchError( err => this.requestCatchError(err, 'L\'enregistrement')));
   }
 
