@@ -12,9 +12,11 @@ import { NotFoundComponent } from './modules/not-found/not-found.component';
 import { DisplayEditMovieComponent } from './modules/movie/display-edit-movie/display-edit-movie.component';
 import { DisplayEditUserComponent } from './modules/user/display-edit-user/display-edit-user.component';
 import { DisplayEditAddressComponent } from './modules/address/display-edit-address/display-edit-address.component';
+import { AuthenticationComponent } from './modules/authentication/authentication.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, },
+  { path: 'connexion', component: AuthenticationComponent },
   { path: 'films', component: ListMovieComponent },
   { path: 'films/ajouter-film', component: CreateMovieComponent },
   { path: 'films/edition-film/:id', component: DisplayEditMovieComponent },
