@@ -6,7 +6,7 @@
   <input type="checkbox" id="menu" />
 
   <!--START NAV BAR-->
-  <nav class="header-nav" id="navbar-index">
+  <nav class="header-nav" id="navbar-index" #sidenav *ngIf="!this.router.url.includes('/connexion')">
     <label class="custom-label">
       <a  routerLink="/"><fa-icon [icon]="this.iconService.dashboardIcon"></fa-icon><span class="custom-span">Tableau de bord</span></a>
     </label>
@@ -30,7 +30,7 @@
   <hr/>
 
   <!--START SIDE BAR-->
-  <div class="side-menu" id="sidebar-index">
+  <div class="side-menu" id="sidebar-index" #sidenav *ngIf="!this.router.url.includes('/connexion')">
     <!-- <hr /> -->
     <a routerLink="/films"><fa-icon [icon]="this.iconService.filmIcon"></fa-icon><span>Films</span></a>
     <a routerLink="/utilisateurs"><fa-icon [icon]="this.iconService.userIcon"></fa-icon><span>Utilisateurs</span></a>
@@ -41,7 +41,7 @@
 
   </div>
   <!--END SIDE BAR-->
-  <div id="header-ariane-nav">
+  <div id="header-ariane-nav" #sidenav *ngIf="!this.router.url.includes('/connexion')">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb element-float-right">
         <li class="breadcrumb-item"><a routerLink="/">Dashboard</a></li>
