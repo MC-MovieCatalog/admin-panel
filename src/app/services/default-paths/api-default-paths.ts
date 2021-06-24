@@ -6,5 +6,6 @@ export const API_DEFAULT_PATHS = {
     ROUTE_ADDRESS: '/api/addresses/',
     ROUTE_INVOICE: '/api/invoices/',
     ROUTE_MOVIE: '/api/movies/',
-    ROUTE_USER: '/api/users/'
+    ROUTE_USER: '/api/users/',
+    ROUTE_LOGIN: 'api/login_check/'
 };
