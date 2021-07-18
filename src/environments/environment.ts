@@ -6,6 +6,7 @@ export const environment = {
   production: false,
 
   // Local API
+  // API_END_POINT_URL: 'https://localhost:8000'
   API_END_POINT_URL: 'https://localhost:8000'
 };
 

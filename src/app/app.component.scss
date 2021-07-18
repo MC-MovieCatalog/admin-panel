@@ -260,3 +260,54 @@ hr {
   margin-left: 20px !important; 
   position: absolute;
 }
+
+// DROPDOWN
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px !important
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #dbdbdb;
+  width: 100% !important;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  color: black;
+  padding-left:16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #5A3531;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgba(90, 53, 49, 0.4);
+}
+
+.dropdown .dropbtn {
+  background-color: transparent !important;
+}
+
+// other
+
+.custom-cursor {
+  cursor: pointer !important;
+}

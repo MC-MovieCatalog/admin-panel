@@ -18,7 +18,9 @@ import {
   faUserNinja, 
   faUsers, 
   faUserShield,
-  faUsersSlash
+  faUsersSlash,
+  faSignOutAlt,
+  faUserLock
 } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable()
@@ -42,4 +44,6 @@ export class IconComponentService {
   userCheckIcon = faUserCheck;
   userClockIcon = faUserClock;
   usersSlashIcon = faUsersSlash;
+  userLock = faUserLock;
+  userLogout = faSignOutAlt;
 }

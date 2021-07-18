@@ -10,16 +10,14 @@
     <label class="custom-label">
       <a  routerLink="/"><fa-icon [icon]="this.iconService.dashboardIcon"></fa-icon><span class="custom-span">Tableau de bord</span></a>
     </label>
-
-    <ul>
-      <h2 class="element-inline-block">
-        <img
-          class="avatar rounded-circle"
-          src="https://cdn.pixabay.com/photo/2017/11/03/18/26/man-2915187_960_720.jpg"
-        />
-        Nesly PETIT BERT
-      </h2>
-    </ul>
+  
+    <div class="dropdown" style="float:right;" *ngIf="this.currentUserData.id">
+      <button class="dropbtn">{{ this.currentUserData.firstName }} {{ this.currentUserData.lastName }}</button>
+      <div class="dropdown-content">
+      <a routerLink="/informations-du-compte">Profile</a>
+      <a (click)="logout()">Déconnexion</a>
+      </div>
+    </div>
 
     <label for="menu" class="menu-bar">
       <i class="fa fa-bars"></i>
@@ -38,6 +36,7 @@
     <a routerLink="/factures"><fa-icon [icon]="this.iconService.invoiceIcon"></fa-icon><span>Factures</span></a>
     <!-- <a routerLink="/parametres"><fa-icon [icon]="settingsIcon"></fa-icon><span>Réglages</span></a> -->
     <!-- <a href="#"><fa-icon [icon]="this.iconService.settingsIcon"></fa-icon><span>Réglages</span></a> -->
+    <a (click)="logout()" class="custom-cursor"><fa-icon [icon]="this.iconService.userLogout"></fa-icon><span>Déconnexion</span></a>
 
   </div>
   <!--END SIDE BAR-->

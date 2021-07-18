@@ -20,7 +20,7 @@ import { ListInvoiceComponent } from './modules/invoice/list-invoice/list-invoic
 import { DisplayEditInvoiceComponent } from './modules/invoice/display-edit-invoice/display-edit-invoice.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthenticationComponent } from './modules/authentication/authentication.component';
@@ -30,6 +30,10 @@ import { NotFoundComponent } from './modules/not-found/not-found.component';
 import { AddressFormComponentsService } from './services/form/address-form.service';
 import { MovieFormComponentsService } from './services/form/movie-form.service';
 import { UserFormComponentService } from './services/form/user-form.service';
+import { AuthenticationService } from './services/auth/authentication.service';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
+import { UserInfoComponent } from './modules/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,8 @@ import { UserFormComponentService } from './services/form/user-form.service';
     DisplayEditInvoiceComponent,
     DashboardComponent,
     AuthenticationComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,10 @@ import { UserFormComponentService } from './services/form/user-form.service';
     InvoiceFormComponentsService,
     AddressFormComponentsService,
     MovieFormComponentsService,
-    UserFormComponentService
+    UserFormComponentService,
+    AuthenticationService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

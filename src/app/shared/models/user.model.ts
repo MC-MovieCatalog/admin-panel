@@ -13,6 +13,7 @@ export class UserModel extends BasicModel {
     private readonly _agreeTermsValidateAt?: Date;
     private readonly _inscriptionDate?: Date;
     private _addresses?: AddressModel[]= [];
+    private _token?: string;
 
 
     public constructor() {
@@ -148,6 +149,20 @@ export class UserModel extends BasicModel {
                 throw new Error('Adresse inconnue.');
             }
             this._addresses = addressesToCreate;
+        }
+    }
+
+    public get token(): string {
+        return this._token;
+    }
+
+    public set token(tokenToCreate: string) {
+
+        if (tokenToCreate) {
+            if (!(tokenToCreate)) {
+                throw new Error('Adresse inconnue.');
+            }
+            this._token = tokenToCreate;
         }
     }
 }

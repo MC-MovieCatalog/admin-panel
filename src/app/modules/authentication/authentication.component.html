@@ -6,21 +6,45 @@
     <div class="card">
         <img src="/assets/logo/MovieCatalog.png" alt="Movie Catalog" class="logo-mc"><h4 class="card-header">Connexion administrateur</h4>
         <div class="card-body">
-            <form>
-            <!-- <form [formGroup]="signinForm" (ngSubmit)="onSubmit()"> -->
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="mc-email" class="form-label mt-4 text-left">Adresse email</label>
-                    <input type="email" class="form-control" id="mc-email" aria-describedby="emailHelp" placeholder="Entrez votre adresse email">
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="mc-email" 
+                        aria-describedby="emailHelp" 
+                        placeholder="Entrez votre adresse email" 
+                        formControlName="username"
+                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                    >
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">L'adresse email ne peut pas être vide</div>
+                    </div>
                 </div>
+
                 <div class="form-group">
                     <label for="mc-password" class="form-label mt-4 text-left">Mot de passe</label>
-                    <input type="password" class="form-control" id="mc-password" placeholder="Entrez votre mot de passe">
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="mc-password" 
+                        placeholder="Entrez votre mot de passe" 
+                        formControlName="password"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                    >
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Le mot de passe est obligatoire</div>
+                    </div>
                 </div>
                 <div class="col-md-12" class="center mt-4">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success">Connexion</button>
+                    <button class="btn btn-success" [disabled]="loading">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Connexion
+                    </button>
                 </div>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
             </form>
         </div>
     </div>
